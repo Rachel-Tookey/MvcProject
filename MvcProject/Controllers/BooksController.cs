@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MvcProject.Models.Entity;
 using MvcProject.Services;
 
 namespace MvcProject.Controllers
@@ -19,6 +20,14 @@ namespace MvcProject.Controllers
         {
             return Ok(_booksService.GetAllBooks());
         }
+
+        [HttpPost]
+        public IActionResult PostBook(Book book)
+        {
+            _booksService.AddBook(book);
+            return Ok();
+        }
+
 
         [HttpGet("author/{id}")]
         public IActionResult GetBooksByAuthor(int id)

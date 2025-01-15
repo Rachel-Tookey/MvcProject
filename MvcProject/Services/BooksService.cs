@@ -22,5 +22,9 @@ namespace MvcProject.Services
             return _booksModel.FetchBooksByAuthor(authorId);
         }
 
+        public void AddBook(Book book)
+        {
+            _booksModel.AddBook(book);
+        }
     }
 }

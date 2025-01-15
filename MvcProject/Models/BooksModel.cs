@@ -24,5 +24,9 @@ namespace MvcProject.Models
             return _db.Books.Where(x => x.AuthorId == id).ToList();
         }
 
+        public void AddBook(Book book)
+        {
+            _db.Books.Add(book);
+        }
     }
 }
