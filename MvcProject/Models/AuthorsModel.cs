@@ -42,9 +42,10 @@ namespace MvcProject.Models
             }
         }
 
-        public List<Book> GetBooksByAuthor(int id)
+        public Author GetBooksByAuthor(int id)
         {
-            return _db.Authors.Where(x => x.Id == id).Include(x => x.Books).Select(x => x.Books).First();
+            var test = _db.Authors.Where(x => x.Id == id).Include(x => x.Books).First();
+            return test; 
         }
 
 

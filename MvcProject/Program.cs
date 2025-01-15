@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using MvcProject.Controllers;
 using MvcProject.Models;
 using MvcProject.Repositories;
-using MvcProject.Services; 
+using MvcProject.Services;
+using System.Text.Json.Serialization;
 
 namespace MvcProject
 {
@@ -25,7 +26,7 @@ namespace MvcProject
             builder.Services.AddScoped<BooksService>();
             builder.Services.AddScoped<BooksModel>();
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
 
             var app = builder.Build();

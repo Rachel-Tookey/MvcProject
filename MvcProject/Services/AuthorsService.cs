@@ -33,7 +33,7 @@ namespace MvcProject.Services
             _authorModel.DeleteAuthor(id);
         }
 
-        public List<Book> GetBooksByAuthor(int id)
+        public Author GetBooksByAuthor(int id)
         {
             return _authorModel.GetBooksByAuthor(id);
         }
